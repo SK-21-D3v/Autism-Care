@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autism Care</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #fef8e4;
+        }
+    
+        header {
+          background-color: #ffeb99;
+          padding: 20px;
+          text-align: center;
+          border-bottom: 2px solid #ffcc00;
+        }
+    
+        header h1 {
+          margin: 0;
+          font-size: 2.5em;
+          text-align: center
+        }
+    
+        header p {
+          font-size: 1.2em;
+          color: #666;
+        }
+    
+        nav {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+        }
+    
+        nav a {
+          text-decoration: none;
+          padding: 10px 20px;
+          margin: 0 10px;
+          color: #333;
+          border: 1px solid #ffcc00;
+          border-radius: 5px;
+          background-color: #fff;
+          transition: background-color 0.3s, color 0.3s;
+        }
+    
+        nav a:hover {
+          background-color: #ffcc00;
+          color: #fff;
+        }
+    
+        .container {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          gap: 20px;
+          padding: 20px;
+          text-align: center
+        }
+    
+        .box {
+          padding: 20px;
+          background-color: #fff;
+          border: 1px solid #ffcc00;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          text:justify
+        }
+    
+        footer {
+          text-align: center;
+          padding: 10px;
+          margin-top: 20px;
+          font-size: 0.9em;
+          color: #999;
+        }
+      </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="margin: 0px;" class="{{ page }}">
+    <header>
+        <h1>Welcome to Autism Care</h1><br>
+        <p>We are here to embrace Autism with Care, Compassion, and Community!</p>
+      </header>
+      <nav>
+        <a href="/assessment-test" aria-label="Take Autism Assessment Test">Take Assessment Test</a>
+        <a href="{{ url_for('manage_reports') }}">Autism Management System 
+        </a>
+        <a href="/database-files" aria-label="Browse Autism Database">Report Database</a>
+        <a href="/resources" aria-label="Explore Autism Resources">Resources</a>
+      </nav>
+        <div class="container">
+            <div class="box">
+              <h2>Autism </h2>
+              <p>Autism, or Autism Spectrum Disorder (ASD), is a developmental condition that affects how a person communicates, interacts with others, and perceives the world. It is a spectrum, meaning it affects individuals differently and to varying degrees, with some showing significant challenges and others exhibiting high levels of ability in certain areas. Common characteristics of autism include difficulties in social interactions, repetitive behaviors, and challenges with communication. These traits often appear in early childhood and can continue into adulthood.
+
+                <p>While the exact cause of autism is not fully understood, it is believed to result from a combination of genetic and environmental factors. Early intervention, tailored therapies, and support systems can greatly improve outcomes, helping individuals with autism lead fulfilling and independent lives. Each person with autism has unique strengths and challenges, and understanding and acceptance play a crucial role in fostering an inclusive society.</p>
+                <p>Individuals with autism may also have sensory sensitivities, where they might overreact or underreact to certain sounds, lights, textures, or smells. These sensory differences can influence daily experiences and behaviors. While autism presents challenges, many individuals also possess remarkable strengths, such as exceptional attention to detail, strong memory, and unique problem-solving abilities. With the right support, understanding, and accommodations, people with autism can thrive in various areas of life, contributing their diverse talents and perspectives to their communities.</p>
+            </div>
+            <div class="box">
+              <h3>Feedback: Discover inspiring stories and experiences shared by caregivers, patients, and professionals in our community</h3>
+              <p><i>"Using the Autism Management System has helped me understand my son’s progress better. The tracking features gave me clear insights into his therapy and behavior, making it easier to support his development. It’s been a game-changer for our family!" – Sarah, Parent</i></p>
+              <p><i>The Autism Management System allowed me to track my daughter’s daily activities and progress in a simple way. It provided useful feedback, and I now feel more confident in managing her needs and communicating with her therapists." – Mark, Parent</i></p>
+            </div>
+    </div>
+    <div style="margin: 24px;" class="box">
+        
+          
+              {% if page == 'home' %}
+              {% elif page == 'manage_reports' %}
+              <div style="margin: 24px;">
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                      <h2>List of Patient Reports</h2>
+                      <a href="/add"><button style="background: blue; border-radius: 8px; padding: 12px; color: white; font-size: 16px; border: 0; cursor: pointer;">Add a New Report</button></a>
+                  </div>
+                  <br><br>
+                  <div>
+                      <ul style="margin: 0; display: flex; flex-wrap: wrap; gap: 24px; padding-left: 0;">
+                          {% for report in reports %}
+                          <li style="padding: 24px; border: 2px solid #f7f7f7; border-radius: 8px; background: #ebefff; width: 296px; display: flex; flex-direction: column;">
+                              <strong style="font-size: 18px; padding-bottom: 4px;">{{ report.name }}</strong>Age: {{ report.age }}
+                              <p><strong>Diagnosis:</strong> {{ report.diagnosis }}</p>
+                              <p><strong>Notes:</strong> {{ report.notes }}</p>
+                              <ul style="padding-top: 24px; padding-left: 0px;">
+                                  <li style="display: flex; gap: 16px; width: 100%;">
+                                      <a href="/update/{{ report.id }}"><button style="background: white; border: 1px solid blue; color: blue; width: 100px; border-radius: 4px; padding: 7px; cursor: pointer;">Edit</button></a>
+                                      <a href="/delete/{{ report.id }}"><button style="background: white; border: 1px solid red; color: red; width: 100px; border-radius: 4px; padding: 7px; cursor: pointer;">Delete</button></a>
+                                  </li>
+                              </ul>
+                          </li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+              {% endif %}
+    <footer>
+        &copy; 2025 Autism Care. All rights reserved. | <a href="/privacy-policy" style="color: #666; text-decoration: none;">Privacy Policy</a>
+      </footer>
+</body>
+
+</html>
