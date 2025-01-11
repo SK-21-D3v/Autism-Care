@@ -4,7 +4,7 @@ Autism Care is a comprehensive platform dedicated to providing personalized supp
 
 Here is an image showing the flow of the application:
 
-![Dashboard](images/app-flow-diagram.png)
+![Dashboard](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1374).png?raw=true)
 ![List Of Reports](images/app-flow-diagram.png)
 ![Adding a New Report](images/app-flow-diagram.png)
 
