@@ -2,12 +2,15 @@
 
 Autism Care is a comprehensive platform dedicated to providing personalized support, resources, and solutions to enhance the lives of individuals on the autism spectrum. The Autism Care Management System is designed to simplify the process of managing autism-related reports for caregivers and medical professionals. This system provides a centralized platform to store, manage, and analyze patient data with ease, enabling better organization and support for individuals with Autism Spectrum Disorder (ASD).
 
-Here is an image showing the flow of the application:
+**Basic Flow of the Application:**
 
-![Dashboard](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1374).png?raw=true)
-![List Of Reports](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1375).png?raw=true)
-![Adding a New Report](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1376).png?raw=true)
-![Upadtes List of Reports](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1376).png?raw=true)
+![Dashboard](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1374).png?raw=true)<br>
+
+![List Of Reports](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1375).png?raw=true) <br>
+
+![Adding a New Report](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1376).png?raw=true) <br>
+
+![Upadtes List of Reports](https://github.com/SK-21-D3v/Autism-Care/blob/main/Screenshot%20(1377).png?raw=true)<br>
 
 ## Features:
 
